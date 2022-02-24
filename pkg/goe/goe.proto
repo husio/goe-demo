@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/husio/goe-demo/pkg/goe";
+package goe;
+
+service Randomer {
+	rpc GenerateRandom (RandomRequest) returns (RandomReply) {}
+}
+
+message RandomRequest {
+    google.protobuf.Timestamp created_at = 1;
+    string id = 2;
+    bytes data = 3;
+}
+
+message RandomReply {
+}
